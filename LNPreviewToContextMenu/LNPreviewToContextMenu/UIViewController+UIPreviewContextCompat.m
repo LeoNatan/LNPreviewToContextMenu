@@ -13,12 +13,16 @@ static void* _LNPReviewContextCompatPreviewActionKey = &_LNPReviewContextCompatP
 
 #pragma mark Support class
 
+@class _LNPreviewContextCompatContextMenuInteraction;
+
 @interface _LNPreviewContextCompatSupport : NSObject <UIViewControllerPreviewing>
 
 @property (nonatomic, strong) UIGestureRecognizer *previewingGestureRecognizerForFailureRelationship;
 @property (nonatomic, weak) id<UIViewControllerPreviewingDelegate> delegate;
 @property (nonatomic, strong) UIView *sourceView;
 @property (nonatomic) CGRect sourceRect;
+
+@property (nonatomic, weak) _LNPreviewContextCompatContextMenuInteraction* interaction;
 
 @end
 @implementation _LNPreviewContextCompatSupport @end
@@ -167,6 +171,10 @@ API_AVAILABLE(ios(13.0))
 		Method m1 = class_getInstanceMethod(UIViewController.class, @selector(registerForPreviewingWithDelegate:sourceView:));
 		Method m2 = class_getInstanceMethod(UIViewController.class, @selector(_ln_registerForPreviewingWithDelegate:sourceView:));
 		method_exchangeImplementations(m1, m2);
+		
+		m1 = class_getInstanceMethod(UIViewController.class, @selector(unregisterForPreviewingWithContext:));
+		m2 = class_getInstanceMethod(UIViewController.class, @selector(_ln_unregisterForPreviewingWithContext:));
+		method_exchangeImplementations(m1, m2);
 	}
 }
 
@@ -180,9 +188,23 @@ API_AVAILABLE(ios(13.0))
 	_LNPreviewContextCompatContextMenuInteraction* interaction = [[_LNPreviewContextCompatContextMenuInteraction alloc] init];
 	interaction.compatSupport = rv;
 	
+	rv.interaction = interaction;
+	
 	[sourceView addInteraction:interaction];
 	
 	return rv;
+}
+
+- (void)_ln_unregisterForPreviewingWithContext:(_LNPreviewContextCompatSupport*)previewing API_AVAILABLE(ios(13.0))
+{
+	if([previewing isKindOfClass:_LNPreviewContextCompatSupport.class] == NO)
+	{
+		[self _ln_unregisterForPreviewingWithContext:previewing];
+		return;
+	}
+	
+	_LNPreviewContextCompatContextMenuInteraction* interaction = [previewing interaction];
+	[previewing.sourceView removeInteraction:interaction];
 }
 
 @end

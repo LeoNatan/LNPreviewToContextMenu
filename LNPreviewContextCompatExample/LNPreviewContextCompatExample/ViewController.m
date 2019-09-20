@@ -21,7 +21,7 @@
 {
 	[super viewDidAppear:animated];
 	
-	[self registerForPreviewingWithDelegate:self sourceView:_previewImageView];
+	id <UIViewControllerPreviewing> previewing = [self registerForPreviewingWithDelegate:self sourceView:_previewImageView];
 }
 
 - (nullable UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location
