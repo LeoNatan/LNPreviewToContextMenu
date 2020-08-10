@@ -133,11 +133,14 @@ API_AVAILABLE(ios(13.0))
 		return nil;
 	}
 	
-	self.snapshotForTargetedPreview = [self.compatSupport.sourceView snapshotViewAfterScreenUpdates:NO];
+	self.snapshotForTargetedPreview = [self.compatSupport.sourceView snapshotViewAfterScreenUpdates:YES];
+	CGRect frame = CGRectOffset(self.snapshotForTargetedPreview.frame, self.compatSupport.sourceView.bounds.origin.x, self.compatSupport.sourceView.bounds.origin.y);
+	self.snapshotForTargetedPreview.frame = frame;
+	
 	[self.compatSupport.sourceView addSubview:self.snapshotForTargetedPreview];
 	
 	UIPreviewParameters* params = [UIPreviewParameters new];
-	params.visiblePath = [UIBezierPath bezierPathWithRect:self.compatSupport.sourceRect];
+	params.visiblePath = [UIBezierPath bezierPathWithRect:CGRectOffset(self.compatSupport.sourceRect, - self.compatSupport.sourceView.bounds.origin.x, - self.compatSupport.sourceView.bounds.origin.y)];
 	return [[UITargetedPreview alloc] initWithView:self.snapshotForTargetedPreview parameters:params];
 }
 
@@ -151,11 +154,13 @@ API_AVAILABLE(ios(13.0))
 
 - (void)contextMenuInteraction:(UIContextMenuInteraction *)interaction willEndForConfiguration:(UIContextMenuConfiguration *)configuration animator:(nullable id<UIContextMenuInteractionAnimating>)animator
 {
-	if(self.snapshotForTargetedPreview)
-	{
-		[self.snapshotForTargetedPreview removeFromSuperview];
-		self.snapshotForTargetedPreview = nil;
-	}
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		if(self.snapshotForTargetedPreview)
+		{
+			[self.snapshotForTargetedPreview removeFromSuperview];
+			self.snapshotForTargetedPreview = nil;
+		}
+	});
 }
 
 @end
