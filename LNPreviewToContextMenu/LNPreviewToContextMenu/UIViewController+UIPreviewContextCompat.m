@@ -6,6 +6,9 @@
 //  Copyright © 2019 LeoNatan. All rights reserved.
 //
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 #import "UIViewController+UIPreviewContextCompat.h"
 @import ObjectiveC;
 
@@ -213,3 +216,5 @@ API_AVAILABLE(ios(13.0))
 }
 
 @end
+
+#pragma GCC diagnostic pop
