@@ -15,7 +15,7 @@ With this framework, your existing 3D Touch Peek&Pop previewing code will automa
 - [x] Supports storyboard and code-based previewing
 - [x] Optionally, supports adding images to your existing preview action items to display as menu item images
 - [x] Adds support for devices without 3D Touch (including iPhone 11 and iPads)
-- [x] macOS Catalyst support (your preview actions are displayed as a context menus)
+- [x] Mac Catalyst support (your preview actions are displayed as context menus)
 
 ## Adding to Your Project
 
