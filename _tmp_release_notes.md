@@ -1,0 +1,2 @@
+- Added support for Swift Package Manager
+- Improved the functionality of the library
