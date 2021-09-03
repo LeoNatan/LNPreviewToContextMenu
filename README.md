@@ -19,6 +19,24 @@ With this framework, your existing 3D Touch Peek&Pop previewing code will automa
 
 ## Adding to Your Project
 
+### Swift Package Manager
+
+Swift Package Manager is the recommended way to integrate `LNPreviewToContextMenu` in your project.
+
+`LNPreviewToContextMenu` supports SPM versions 5.1.0 and above. To use SPM, you should use Xcode 11 to open your project. Click `File` -> `Swift Packages` -> `Add Package Dependency`, enter `https://github.com/LeoNatan/LNPreviewToContextMenu`. Select the version you’d like to use.
+
+You can also manually add the package to your `Package.swift` file:
+
+```swift
+.package(url: "https://github.com/LeoNatan/LNPreviewToContextMenu.git", from: "1.0")
+```
+
+And the dependency in your target:
+
+```swift
+.target(name: "BestExampleApp", dependencies: ["LNPreviewToContextMenu"]),
+```
+
 ### Carthage
 
 Add the following to your Cartfile:
@@ -35,7 +53,7 @@ Check out the included example project to see how it is integrated with the fram
 
 ### CocoaPods
 
-CocoaPods is not supported. There are many reasons for this. Instead of CocoaPods, use Carthage. You can continue using CocoaPods for for your other dependencies and Carthage for `LNPreviewToContextMenu`.
+CocoaPods is not supported. There are many reasons for this. Instead of CocoaPods, use Swift Package Manager. You can continue using CocoaPods for for your other dependencies and Swift Package Manager for `LNPreviewToContextMenu`.
 
 ## Using the Framework
 

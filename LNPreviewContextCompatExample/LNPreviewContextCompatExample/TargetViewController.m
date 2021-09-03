@@ -2,12 +2,13 @@
 //  TargetViewController.m
 //  LNPreviewContextCompatExample
 //
-//  Created by Leo Natan (Wix) on 9/20/19.
-//  Copyright © 2019 LeoNatan. All rights reserved.
+//  Created by Leo Natan on 9/20/19.
+//  Copyright © 2019-2021 Leo Natan. All rights reserved.
 //
 
 #import "TargetViewController.h"
-#import <LNPreviewToContextMenu/UIPreviewAction+Images.h>
+@import LNPreviewToContextMenu;
+//#import <LNPreviewToContextMenu/UIPreviewAction+Images.h>
 
 @interface TargetViewController ()
 

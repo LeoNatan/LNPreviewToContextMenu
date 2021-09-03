@@ -1,15 +1,15 @@
 //
 //  UIViewController+UIPreviewContextCompat.m
-//  LNPreviewContextCompat
+//  LNPreviewToContextMenu
 //
-//  Created by Leo Natan (Wix) on 9/20/19.
-//  Copyright © 2019 LeoNatan. All rights reserved.
+//  Created by Leo Natan on 9/20/19.
+//  Copyright © 2019-2021 Leo Natan. All rights reserved.
 //
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
-#import "UIViewController+UIPreviewContextCompat.h"
+@import UIKit;
 @import ObjectiveC;
 
 static void* _LNPReviewContextCompatPreviewActionKey = &_LNPReviewContextCompatPreviewActionKey;
@@ -157,18 +157,28 @@ API_AVAILABLE(ios(13.0))
 
 - (void)contextMenuInteraction:(UIContextMenuInteraction *)interaction willEndForConfiguration:(UIContextMenuConfiguration *)configuration animator:(nullable id<UIContextMenuInteractionAnimating>)animator
 {
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		if(self.snapshotForTargetedPreview)
-		{
-			[self.snapshotForTargetedPreview removeFromSuperview];
-			self.snapshotForTargetedPreview = nil;
-		}
-	});
+	id snapshotViewToRemove = self.snapshotForTargetedPreview;
+	self.snapshotForTargetedPreview = nil;
+	
+	dispatch_block_t block = ^{
+		[snapshotViewToRemove removeFromSuperview];
+	};
+	
+	if(animator != nil)
+	{
+		[animator addCompletion:block];
+	}
+	else
+	{
+		block();
+	}
 }
 
 @end
 
 #pragma mark UIViewController category
+
+@interface UIViewController (UIPreviewContextCompat) @end
 
 @implementation UIViewController (UIPreviewContextCompat)
 

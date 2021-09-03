@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39C7BBF5233433B900052DF0 /* UIViewController+UIPreviewContextCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 39C7BBF3233433B900052DF0 /* UIViewController+UIPreviewContextCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		39C7BBF6233433B900052DF0 /* UIViewController+UIPreviewContextCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C7BBF4233433B900052DF0 /* UIViewController+UIPreviewContextCompat.m */; };
 		39C7BBFB2334428000052DF0 /* UIPreviewAction+Images.h in Headers */ = {isa = PBXBuildFile; fileRef = 39C7BBFA2334424000052DF0 /* UIPreviewAction+Images.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -15,7 +14,6 @@
 /* Begin PBXFileReference section */
 		39C7BBB623342F5700052DF0 /* LNPreviewToContextMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LNPreviewToContextMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C7BBBA23342F5700052DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39C7BBF3233433B900052DF0 /* UIViewController+UIPreviewContextCompat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UIPreviewContextCompat.h"; sourceTree = "<group>"; };
 		39C7BBF4233433B900052DF0 /* UIViewController+UIPreviewContextCompat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UIPreviewContextCompat.m"; sourceTree = "<group>"; };
 		39C7BBFA2334424000052DF0 /* UIPreviewAction+Images.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIPreviewAction+Images.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				39C7BBFA2334424000052DF0 /* UIPreviewAction+Images.h */,
-				39C7BBF3233433B900052DF0 /* UIViewController+UIPreviewContextCompat.h */,
 				39C7BBF4233433B900052DF0 /* UIViewController+UIPreviewContextCompat.m */,
 				39C7BBBA23342F5700052DF0 /* Info.plist */,
 			);
@@ -65,7 +62,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39C7BBF5233433B900052DF0 /* UIViewController+UIPreviewContextCompat.h in Headers */,
 				39C7BBFB2334428000052DF0 /* UIPreviewAction+Images.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +276,6 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LeoNatan.LNPreviewToContextMenu;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -305,7 +300,6 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LeoNatan.LNPreviewToContextMenu;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

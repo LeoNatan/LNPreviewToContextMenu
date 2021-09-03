@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39B6D55B2334472B008A80E6 /* LNPreviewToContextMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B6D55823344715008A80E6 /* LNPreviewToContextMenu.framework */; };
-		39B6D55C2334472B008A80E6 /* LNPreviewToContextMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39B6D55823344715008A80E6 /* LNPreviewToContextMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39114ED126E2B61B004FC75B /* LNPreviewToContextMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 39114ED026E2B61B004FC75B /* LNPreviewToContextMenu */; };
+		39114ED226E2B61B004FC75B /* LNPreviewToContextMenu in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 39114ED026E2B61B004FC75B /* LNPreviewToContextMenu */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		39C7BBCF23342F7800052DF0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C7BBCE23342F7800052DF0 /* AppDelegate.m */; };
 		39C7BBD223342F7800052DF0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C7BBD123342F7800052DF0 /* SceneDelegate.m */; };
 		39C7BBD523342F7800052DF0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C7BBD423342F7800052DF0 /* ViewController.m */; };
@@ -19,23 +19,6 @@
 		39C7BBF2233431C400052DF0 /* TargetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C7BBF1233431C400052DF0 /* TargetViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		39B6D55723344715008A80E6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 39B6D55323344715008A80E6 /* LNPreviewToContextMenu.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 39C7BBB623342F5700052DF0;
-			remoteInfo = LNPreviewToContextMenu;
-		};
-		39B6D55D23344737008A80E6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 39B6D55323344715008A80E6 /* LNPreviewToContextMenu.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 39C7BBB523342F5700052DF0;
-			remoteInfo = LNPreviewToContextMenu;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		39C7BBEF23342FAD00052DF0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -43,7 +26,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				39B6D55C2334472B008A80E6 /* LNPreviewToContextMenu.framework in Embed Frameworks */,
+				39114ED226E2B61B004FC75B /* LNPreviewToContextMenu in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,7 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		39B6D55323344715008A80E6 /* LNPreviewToContextMenu.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LNPreviewToContextMenu.xcodeproj; path = ../LNPreviewToContextMenu/LNPreviewToContextMenu.xcodeproj; sourceTree = "<group>"; };
+		39114ECF26E2B60C004FC75B /* LNPreviewToContextMenu */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LNPreviewToContextMenu; path = ..; sourceTree = "<group>"; };
 		39C7BBCA23342F7800052DF0 /* LNPreviewContextCompatExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LNPreviewContextCompatExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C7BBCD23342F7800052DF0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		39C7BBCE23342F7800052DF0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -74,25 +57,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39B6D55B2334472B008A80E6 /* LNPreviewToContextMenu.framework in Frameworks */,
+				39114ED126E2B61B004FC75B /* LNPreviewToContextMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39B6D55423344715008A80E6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				39B6D55823344715008A80E6 /* LNPreviewToContextMenu.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		39C7BBC123342F7800052DF0 = {
 			isa = PBXGroup;
 			children = (
-				39B6D55323344715008A80E6 /* LNPreviewToContextMenu.xcodeproj */,
+				39114ECF26E2B60C004FC75B /* LNPreviewToContextMenu */,
 				39C7BBCC23342F7800052DF0 /* LNPreviewContextCompatExample */,
 				39C7BBCB23342F7800052DF0 /* Products */,
 				39C7BBEC23342FAD00052DF0 /* Frameworks */,
@@ -150,9 +125,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				39B6D55E23344737008A80E6 /* PBXTargetDependency */,
+				39114ED426E2B636004FC75B /* PBXTargetDependency */,
 			);
 			name = LNPreviewContextCompatExample;
+			packageProductDependencies = (
+				39114ED026E2B61B004FC75B /* LNPreviewToContextMenu */,
+			);
 			productName = LNPreviewContextCompatExample;
 			productReference = 39C7BBCA23342F7800052DF0 /* LNPreviewContextCompatExample.app */;
 			productType = "com.apple.product-type.application";
@@ -163,8 +141,8 @@
 		39C7BBC223342F7800052DF0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1100;
-				ORGANIZATIONNAME = LeoNatan;
+				LastUpgradeCheck = 9999;
+				ORGANIZATIONNAME = "Leo Natan";
 				TargetAttributes = {
 					39C7BBC923342F7800052DF0 = {
 						CreatedOnToolsVersion = 11.0;
@@ -172,7 +150,7 @@
 				};
 			};
 			buildConfigurationList = 39C7BBC523342F7800052DF0 /* Build configuration list for PBXProject "LNPreviewContextCompatExample" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -182,28 +160,12 @@
 			mainGroup = 39C7BBC123342F7800052DF0;
 			productRefGroup = 39C7BBCB23342F7800052DF0 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 39B6D55423344715008A80E6 /* Products */;
-					ProjectRef = 39B6D55323344715008A80E6 /* LNPreviewToContextMenu.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				39C7BBC923342F7800052DF0 /* LNPreviewContextCompatExample */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		39B6D55823344715008A80E6 /* LNPreviewToContextMenu.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = LNPreviewToContextMenu.framework;
-			remoteRef = 39B6D55723344715008A80E6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		39C7BBC823342F7800052DF0 /* Resources */ = {
@@ -234,10 +196,9 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		39B6D55E23344737008A80E6 /* PBXTargetDependency */ = {
+		39114ED426E2B636004FC75B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = LNPreviewToContextMenu;
-			targetProxy = 39B6D55D23344737008A80E6 /* PBXContainerItemProxy */;
+			productRef = 39114ED326E2B636004FC75B /* LNPreviewToContextMenu */;
 		};
 /* End PBXTargetDependency section */
 
@@ -287,6 +248,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -346,6 +308,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -437,6 +400,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		39114ED026E2B61B004FC75B /* LNPreviewToContextMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LNPreviewToContextMenu;
+		};
+		39114ED326E2B636004FC75B /* LNPreviewToContextMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LNPreviewToContextMenu;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 39C7BBC223342F7800052DF0 /* Project object */;
 }
