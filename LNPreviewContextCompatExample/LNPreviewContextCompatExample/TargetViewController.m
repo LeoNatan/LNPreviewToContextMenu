@@ -44,7 +44,7 @@
 		repost.image = [UIImage systemImageNamed:@"bubble.left"];
 	}
 	
-	UIPreviewAction* repost2 = [UIPreviewAction actionWithTitle:@"Repsot With Comment" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+	UIPreviewAction* repost2 = [UIPreviewAction actionWithTitle:@"Repost With Comment" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
 		NSLog(@"🔄💬 Reposted with comment");
 	}];
 	if (@available(iOS 13.0, *)) {

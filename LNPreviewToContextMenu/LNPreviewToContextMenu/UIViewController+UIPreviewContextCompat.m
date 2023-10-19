@@ -28,7 +28,14 @@ static void* _LNPReviewContextCompatPreviewActionKey = &_LNPReviewContextCompatP
 @property (nonatomic, weak) _LNPreviewContextCompatContextMenuInteraction* interaction;
 
 @end
-@implementation _LNPreviewContextCompatSupport @end
+@implementation _LNPreviewContextCompatSupport
+
+- (void)setSourceRect:(CGRect)sourceRect
+{
+	_sourceRect = sourceRect;
+}
+
+@end
 
 #pragma mark Context menu transformer
 
@@ -134,6 +141,27 @@ API_AVAILABLE(ios(13.0))
 	if(CGRectEqualToRect(self.compatSupport.sourceRect, self.compatSupport.sourceView.bounds))
 	{
 		return nil;
+	}
+	
+	if([self.compatSupport.sourceView isKindOfClass:UITableView.class] || [self.compatSupport.sourceView isKindOfClass:UICollectionView.class])
+	{
+		CGPoint center = CGPointMake(CGRectGetMidX(self.compatSupport.sourceRect), CGRectGetMidY(self.compatSupport.sourceRect));
+		id tableView = self.compatSupport.sourceView;
+		
+		UIView* cell = nil;
+		if([self.compatSupport.sourceView isKindOfClass:UICollectionView.class])
+		{
+			cell = [tableView cellForItemAtIndexPath:[tableView indexPathForItemAtPoint:center]];
+		}
+		else
+		{
+			cell = [tableView cellForRowAtIndexPath:[tableView indexPathForRowAtPoint:center]];
+		}
+		
+		if(CGRectEqualToRect([tableView convertRect:cell.bounds fromView:cell], self.compatSupport.sourceRect))
+		{
+			return [[UITargetedPreview alloc] initWithView:cell parameters:[UIPreviewParameters new]];
+		}
 	}
 	
 	self.snapshotForTargetedPreview = [self.compatSupport.sourceView snapshotViewAfterScreenUpdates:YES];
